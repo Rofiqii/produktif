@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="658.0" stylesheets="@../../../style/admin.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="modal_title" layoutX="29.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tambah Layanan Baru" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="Poppins Bold" size="27.0" />
+         </font>
+      </Text>
+      <Text fx:id="modal_subtitle" fill="#8a8b90" layoutX="15.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Harga Cucian" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font name="Poppins Medium" size="11.0" />
+         </font>
+      </Text>
+      <HBox layoutX="531.0" layoutY="573.0" onMouseClicked="#saveAction" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <FontIcon iconLiteral="bx-save" styleClass="icon" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Simpan" />
+         </children>
+         <styleClass>
+            <String fx:value="icon-button" />
+            <String fx:value="primary-background" />
+         </styleClass>
+      </HBox>
+      <VBox layoutX="25.0" layoutY="113.0" prefWidth="628.0" spacing="23.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <VBox prefWidth="306.0" scaleShape="false" styleClass="form-control">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Nama" />
+                  <TextField fx:id="txt_username" prefHeight="39.0" prefWidth="514.0" styleClass="input" />
+               </children>
+            </VBox>
+            <HBox prefWidth="200.0" spacing="16.0">
+               <children>
+                  <VBox prefWidth="306.0" scaleShape="false" styleClass="form-control">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Harga" />
+                        <TextField fx:id="txt_username1" styleClass="input" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="306.0" scaleShape="false" styleClass="form-control">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Unit" />
+                        <ComboBox prefHeight="20.0" prefWidth="306.0" styleClass="input" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefWidth="100.0" styleClass="form-control">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Peran" />
+                  <CheckBox mnemonicParsing="false" text="Express" />
+                  <HBox prefWidth="200.0" spacing="20.0" />
+               </children>
+            </VBox>
+            <VBox prefWidth="306.0" scaleShape="false" styleClass="form-control">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Alamat" />
+                  <TextArea fx:id="txt_address" prefHeight="125.0" prefWidth="628.0" styleClass="input" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

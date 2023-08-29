@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1096.0" stylesheets="@../../style/admin.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="page-title" text="Pengguna Aplikasi" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="34.30000019073486">
+         <font>
+            <Font name="Poppins SemiBold" size="14.0" />
+         </font></Text>
+      <HBox fx:id="btn_add_account" layoutX="894.0" layoutY="20.0" onMouseClicked="#showAddAccount" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+         <styleClass>
+            <String fx:value="icon-button" />
+            <String fx:value="btn-outline" />
+            <String fx:value="primary-outline" />
+         </styleClass>
+         <children>
+            <FontIcon iconLiteral="bx-plus-circle" styleClass="icon" text="" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Tambah Akun" />
+         </children>
+      </HBox>
+      <AnchorPane layoutY="120.0" prefHeight="575.0" prefWidth="1084.0" styleClass="card" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="24.0" layoutY="115.0" prefHeight="54.0" prefWidth="200.0" styleClass="table-header" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="70.0">
+               <children>
+                  <CheckBox fx:id="check_bulk_all" mnemonicParsing="false" onMouseClicked="#selectBulkAll" styleClass="check-header" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Username" wrappingWidth="175.0" />
+                  <Text layoutX="148.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Role" wrappingWidth="150.0" />
+                  <Text layoutX="423.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="No WhatsApp" wrappingWidth="175.0" />
+                  <Text layoutX="673.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Nama Lengkap" wrappingWidth="225.0" />
+                  <Text layoutX="668.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Aksi" wrappingWidth="130.0" />
+               </children>
+            </HBox>
+            <Text fx:id="total_text" fill="#7f7f7f" layoutX="24.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Menampilkan 10 data akun">
+               <font>
+                  <Font name="Poppins Medium" size="12.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="28.0" styleClass="table-search">
+               <children>
+                  <FontIcon iconColor="DIMGRAY" iconLiteral="bx-search" iconSize="20" styleClass="icon" />
+                  <TextField fx:id="txt_keyword" onKeyReleased="#searchAction" prefWidth="200.0" promptText="Cari di sini..." styleClass="input" />
+               </children>
+            </HBox>
+            <ScrollPane layoutX="29.0" layoutY="177.0" prefHeight="380.0" prefWidth="1058.0" styleClass="table-scroll" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="135.0">
+               <content>
+                  <VBox fx:id="account_table" alignment="TOP_CENTER" prefHeight="46.0" prefWidth="1030.0" styleClass="table-content-container" />
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_LEFT" layoutX="920.0" layoutY="28.0" styleClass="form-control" AnchorPane.rightAnchor="9.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Sort By:" wrappingWidth="45.0" />
+                  <ComboBox fx:id="CB_column" prefHeight="20.0" prefWidth="155.0" promptText="Role" style="-fx-padding: 7 5;" styleClass="input" />
+                  <HBox fx:id="sortAction" alignment="CENTER" onMouseClicked="#sortAction" styleClass="btn-sorting">
+                     <children>
+                        <FontIcon fx:id="sort_icon" iconLiteral="bx-sort-down" styleClass="sort-icon" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Text layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manajemen Akun" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-7.25">
+         <font>
+            <Font name="Poppins Bold" size="25.0" />
+         </font>
+      </Text>
+      <HBox fx:id="btn_bulk_delete" disable="true" layoutX="759.0" layoutY="50.0" onMouseClicked="#bulkDelete">
+         <styleClass>
+            <String fx:value="icon-button" />
+            <String fx:value="btn-outline" />
+            <String fx:value="danger-outline" />
+         </styleClass>
+         <children>
+            <FontIcon iconLiteral="bx-trash" styleClass="icon" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Hapus Semua" />
+         </children>
+      </HBox>
+   </children>
+</fx:root>
